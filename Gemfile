@@ -6,7 +6,7 @@ SOURCE         = ENV.fetch('SOURCE', :git).to_sym
 REPO_POSTFIX   = SOURCE == :path ? ''                                : '.git'
 DATAMAPPER     = SOURCE == :path ? Pathname(__FILE__).dirname.parent : 'https://github.com/datamapper'
 SNUSNU         = SOURCE == :path ? Pathname(__FILE__).dirname.parent : 'https://github.com/snusnu'
-DM_VERSION     = '~> 1.2'
+DM_VERSION     = '~> 1.3.0.beta'
 DO_VERSION     = '~> 0.10.8'
 DM_DO_ADAPTERS = %w[ sqlite postgres mysql oracle sqlserver ]
 CURRENT_BRANCH = ENV.fetch('GIT_BRANCH', 'master')
@@ -28,6 +28,7 @@ group :development do
   gem 'rake',           '~> 0.9.2'
   gem 'rspec',          '~> 1.3.2'
   gem 'yard',           '~> 0.7.2'
+  gem 'jeweler',        '~> 2.0.1'
 
   gem 'dm-constraints', DM_VERSION,
     SOURCE  => "#{DATAMAPPER}/dm-constraints#{REPO_POSTFIX}",
